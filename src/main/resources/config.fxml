@@ -3,55 +3,73 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.indexController">
-   <top>
-      <Pane prefHeight="44.0" prefWidth="600.0" BorderPane.alignment="CENTER" />
-   </top>
-   <left>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
-   </left>
-   <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-         <children>
-            <Label alignment="CENTER" prefHeight="51.0" prefWidth="400.0" text="Amazon AWS Instance Runner" />
-            <Label alignment="CENTER" prefHeight="37.0" prefWidth="400.0" text="Please input your Amazon AWS Credentials" />
-            <Label alignment="CENTER" prefHeight="16.0" prefWidth="402.0" text="AWS Access Key">
-               <VBox.margin>
-                  <Insets bottom="10.0" />
-               </VBox.margin>
-            </Label>
-            <TextField maxWidth="370.0" minWidth="370.0">
-               <VBox.margin>
-                  <Insets left="15.0" right="15.0" />
-               </VBox.margin>
-            </TextField>
-            <Label alignment="CENTER" prefHeight="16.0" prefWidth="400.0" text="AWS Secret Access Key">
-               <VBox.margin>
-                  <Insets bottom="10.0" top="10.0" />
-               </VBox.margin>
-            </Label>
-            <TextField alignment="CENTER" layoutX="25.0" layoutY="124.0" maxWidth="370.0" minWidth="370.0" prefHeight="26.0" prefWidth="370.0">
-               <VBox.margin>
-                  <Insets left="15.0" right="10.0" />
-               </VBox.margin>
-            </TextField>
-         </children>
-      </VBox>
-   </center>
-   <right>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER" />
-   </right>
-   <bottom>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
-         <children>
-            <Pane prefHeight="200.0" prefWidth="200.0" />
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/8.0.121" fx:controller="UI.configController">
+   <children>
+      <BorderPane prefHeight="400.0" prefWidth="600.0">
+         <top>
+            <Pane prefHeight="50.0" prefWidth="600.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="next" layoutX="71.0" layoutY="60.0" mnemonicParsing="false" onAction="#changeScene" text="Next" />
+                  <Label fx:id="detailsCheck" alignment="CENTER" layoutX="108.0" layoutY="15.0" prefHeight="18.0"
+                         prefWidth="345.0"/>
                </children>
-            </AnchorPane>
-            <Pane prefHeight="200.0" prefWidth="200.0" />
-         </children>
-      </HBox>
-   </bottom>
-</BorderPane>
+            </Pane>
+         </top>
+         <left>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER"/>
+         </left>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Label alignment="CENTER" prefHeight="16.0" prefWidth="405.0" text="Select your Image Id"/>
+                  <HBox prefHeight="25.0" prefWidth="400.0">
+                     <children>
+                        <Pane prefHeight="26.0" prefWidth="123.0"/>
+                        <ChoiceBox fx:id="imageIDD" prefWidth="150.0"/>
+                     </children>
+                  </HBox>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="405.0"
+                         text="Select your Instance Type"/>
+                  <HBox layoutX="10.0" layoutY="26.0" prefHeight="25.0" prefWidth="400.0">
+                     <children>
+                        <Pane prefHeight="26.0" prefWidth="123.0"/>
+                        <ChoiceBox fx:id="instanceTypeDD" prefWidth="150.0"/>
+                     </children>
+                  </HBox>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="52.0" prefHeight="16.0" prefWidth="405.0"
+                         text="Input your Key Pair Name"/>
+                  <HBox layoutX="10.0" layoutY="68.0" prefHeight="25.0" prefWidth="400.0">
+                     <children>
+                        <Pane prefHeight="26.0" prefWidth="123.0"/>
+                        <TextField fx:id="keyName" maxWidth="150.0" minWidth="150.0" prefWidth="150.0"/>
+                     </children>
+                  </HBox>
+                  <Label alignment="CENTER" layoutX="10.0" layoutY="94.0" prefHeight="16.0" prefWidth="405.0"
+                         text="Input your Group Name"/>
+                  <HBox layoutX="10.0" layoutY="110.0" prefHeight="25.0" prefWidth="400.0">
+                     <children>
+                        <Pane prefHeight="26.0" prefWidth="123.0"/>
+                        <TextField fx:id="groupName" maxWidth="150.0" minWidth="150.0" prefWidth="150.0"/>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+         <right>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER"/>
+         </right>
+         <bottom>
+            <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="200.0" prefWidth="200.0"/>
+                  <Button fx:id="runInstance" mnemonicParsing="false" onAction="#runInstance" text="Run Instance">
+                     <HBox.margin>
+                        <Insets left="45.0"/>
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

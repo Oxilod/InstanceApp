@@ -1,14 +1,14 @@
-package sample;
+package UI;
 
 
 import instanceCreator.Credentials;
-import instanceCreator.InstanceHandler;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -19,34 +19,23 @@ public class indexController {
     public TextField awsacc;
     public TextField awssec;
     public Button next;
-    public indexController() throws IOException {
-    }
+    public static Label errorDisplay;
 
-    public String getAwsSecureKey() {
-        return Credentials.AWS_SECRET_ACCESS_KEY;
-    }
 
-    public void setAwsSecureKey() {
+    private void setAwsSecureKey() {
         Credentials.AWS_SECRET_ACCESS_KEY = awssec.getText();
     }
 
-    public String getAwsAccessKey() {
-        return Credentials.AWS_ACCESS_KEY_ID;
-    }
 
-    public void setAwsAccessKey() {
+    private void setAwsAccessKey() {
         Credentials.AWS_ACCESS_KEY_ID = awsacc.getText();
-    }
-
-    public void startInstance(ActionEvent event) throws IOException{
-        setAwsAccessKey();
-        setAwsSecureKey();
-        InstanceHandler.instance();
     }
 
 
     public void changeScene(ActionEvent event) throws IOException {
-        Parent configLoader = FXMLLoader.load(getClass().getClassLoader().getResource("index.fxml"));
+        setAwsAccessKey();
+        setAwsSecureKey();
+        Parent configLoader = FXMLLoader.load(getClass().getClassLoader().getResource("config.fxml"));
         Scene config = new Scene(configLoader);
         Stage primaryStage = (Stage) next.getScene().getWindow();
         primaryStage.setScene(config);

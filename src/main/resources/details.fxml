@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/8.0.121" fx:controller="UI.Details">
+    <children>
+        <BorderPane prefHeight="400.0" prefWidth="600.0">
+            <center>
+                <ListView fx:id="instanceList" BorderPane.alignment="CENTER"/>
+            </center>
+            <top>
+                <Pane prefHeight="63.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label alignment="CENTER" layoutX="202.0" layoutY="32.0" prefHeight="16.0" prefWidth="198.0"
+                               text="Running Instances"/>
+                    </children>
+                </Pane>
+            </top>
+            <left>
+                <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER"/>
+            </left>
+            <right>
+                <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER"/>
+            </right>
+            <bottom>
+                <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Pane prefHeight="200.0" prefWidth="200.0"/>
+                        <VBox prefHeight="100.0" prefWidth="199.0"/>
+                    </children>
+                </HBox>
+            </bottom>
+        </BorderPane>
+    </children>
+</AnchorPane>
