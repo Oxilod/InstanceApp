@@ -37,4 +37,10 @@ public class Details implements Initializable {
         listHandler = InstanceHandler.getRunningInstances();
         instanceList.setItems(FXCollections.observableList(listHandler));
     }
+    public String getInstanceName(){
+        return instanceList.getAccessibleText();
+    }
+    public void stopInstance(){
+        System.out.println(instanceList.getAccessibleText());
+    }
 }

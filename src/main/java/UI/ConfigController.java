@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class configController implements Initializable {
+public class ConfigController implements Initializable {
     public static String selectedImageID;
     public static String selectedInstanceType;
     public static String selectedKeyName;
@@ -76,7 +76,7 @@ public class configController implements Initializable {
             primaryStage.setScene(config);
             primaryStage.show();
         } catch (AmazonEC2Exception e) {
-            indexController.errorDisplay.setText("Please check your credentials and configuration and try again");
+            IndexController.errorDisplay.setText("Please check your credentials and configuration and try again");
             Parent goBack = FXMLLoader.load(getClass().getClassLoader().getResource("index.fxml"));
             Scene goBackScene = new Scene(goBack);
             Stage primaryStage = (Stage) runInstance.getScene().getWindow();

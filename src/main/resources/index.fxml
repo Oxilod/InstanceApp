@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <BorderPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
             minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121"
-            fx:controller="UI.indexController">
+            fx:controller="UI.IndexController">
     <top>
         <Pane prefHeight="44.0" prefWidth="600.0" BorderPane.alignment="CENTER"/>
     </top>

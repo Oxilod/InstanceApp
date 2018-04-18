@@ -14,7 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class indexController {
+public class IndexController {
     @FXML
     public TextField awsacc;
     public TextField awssec;
